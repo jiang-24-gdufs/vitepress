@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: home - -test
 
 title: VitePress
 titleTemplate: Vite & Vue Powered Static Site Generator
