@@ -14,14 +14,24 @@ jobs:
           fetch-depth: 0
       # https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md#caching-packages-data
       # Caching pnpm (v6.10+) dependencies:
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 6.32.9
+      # - uses: pnpm/action-setup@v2
+      #   with:
+      #     version: 6.32.9
+
+
+      # from test.yml
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+
       - uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+
+      # from test.yml
+      - name: Install deps
+        run: pnpm install
 
       - name: Build
         run: pnpm docs:build
