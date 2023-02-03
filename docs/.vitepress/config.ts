@@ -5,6 +5,8 @@ const require = createRequire(import.meta.url)
 const pkg = require('vitepress/package.json')
 
 export default defineConfig({
+  base: '/test/',
+
   lang: 'en-US',
   title: 'VitePress',
   description: 'Vite & Vue powered static site generator.',
